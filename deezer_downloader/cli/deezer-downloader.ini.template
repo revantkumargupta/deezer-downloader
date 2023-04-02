@@ -42,9 +42,6 @@ workers = 4
 ; login manually using your web browser and take the arl ookie
 cookie_arl = [a-f0-9]{192}
 
-[youtubedl]
-; you are responsible for keeping yt-dlp up-to-date (https://github.com/yt-dlp/yt-dlp)
-; command = /home/kmille/projects/deezer-downloader/app/venv/bin/yt-dlp
-command = /usr/bin/yt-dlp
+
 
 ; vim: syntax=dosini
