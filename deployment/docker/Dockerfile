@@ -21,9 +21,4 @@ RUN chown deezer:deezer /mnt/deezer-downloader
 
 USER deezer
 EXPOSE 5000
-CMD ["/bin/bash", "-c", "/usr/local/bin/deezer-downloader --config /etc/deezer-downloader.ini"]
-
-# Add start command
-RUN echo "#!/bin/bash" >> /usr/local/bin/start && \
-    echo "/usr/local/bin/deezer-downloader --config /etc/deezer-downloader.ini" >> /usr/local/bin/start && \
-    chmod +x /usr/local/bin/start
+CMD ["sh", "-c", "/usr/local/bin/deezer-downloader --config /etc/deezer-downloader.ini && python3 -m http.server 5000"]
