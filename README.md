@@ -9,7 +9,7 @@
 - download Spotify playlists (by parsing the Spotify website and download the songs from Deezer)
 - download as zip file (including m3u8 playlist file)
 - 320 kbit/s mp3s with ID3-Tags and album cover (UPDATE: right now only 128bkit/s mp3 works, see #66)
-- download songs via yt-dlp
+
 - KISS (keep it simple and stupid) front end
 - MPD integration (use it on a Raspberry Pi!)
 - simple REST api
@@ -76,10 +76,7 @@ If you want to debug or build it from source: there is a docker-compose file in 
   poetry install
   poetry run deezer-downloader --show-config-template > settings.ini
 
-  # enable yt-dlp
-  sudo pip install yt-dlp
-  sed -i 's,.*command = /usr/bin/yt-dlp.*,command = /usr/local/bin/yt-dlp,' settings.ini
-
+ 
   # enable mpd
   sudo apt-get install -yq mpd ncmpcpp
   sudo sed -i 's,^music_directory.*,music_directory         "/tmp/deezer-downloader",' /etc/mpd.conf
@@ -152,9 +149,6 @@ https://github.com/kmille/music-ansible (almost always outdated)
 - update dependencies
 - switch to waitress (from gunicorn
 
-#### Version 1.3.3 (27.12.2021)
-- replace youtube-dl by yt-dl
-- update third party dependencies
 
 #### Version 1.3.2 (26.11.2021)
 - fix broken deezer download functionality (#66, removes the ability to download flac quality)
