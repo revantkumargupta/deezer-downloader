@@ -21,4 +21,7 @@ RUN chown deezer:deezer /mnt/deezer-downloader
 
 USER deezer
 EXPOSE 5000
-CMD ["sh", "-c", "/usr/local/bin/deezer-downloader --config /etc/deezer-downloader.ini && python3 -m http.server 5000"]
+CMD /usr/local/bin/deezer-downloader --config /etc/deezer-downloader.ini
+
+# Add start command here
+ENTRYPOINT ["python3", "-m", "flask", "run", "--host=0.0.0.0", "--port=5000"]
