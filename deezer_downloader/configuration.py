@@ -23,9 +23,7 @@ def load_config(config_abs):
             print("ERROR: base download dir must be a subdirectory of the mpd music_dir_root")
             sys.exit(1)
 
-    if not Path(config['youtubedl']['command']).exists():
-        print(f"ERROR: yt-dlp not found at {config['youtubedl']['command']}")
-        sys.exit(1)
+    
 
     if "DEEZER_COOKIE_ARL" in os.environ.keys():
         config["deezer"]["cookie_arl"] = os.environ["DEEZER_COOKIE_ARL"]
